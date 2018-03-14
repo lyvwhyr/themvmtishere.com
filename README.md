@@ -1,4 +1,4 @@
-![Alt text](app/img/Screenshot from 2018-03-14 05-13-46.png?raw=true "screenshot")
+![Alt text](app/img/readme.png?raw=true "screenshot")
 
 ## Features
 
