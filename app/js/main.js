@@ -3,31 +3,15 @@ import './module1.js';
 
 $(document).ready(function() {
 
-  $('.button-collapse')
-    .on('click', function() {
-      $('#slide-out').toggleClass('visible-on-mobile');
-    });
-
-  $(document).on('click', function(e) {
-    var target = e.target;
-    if (!$(target).is('#slide-out') && !$(target).parents().is('#slide-out') &&
-        !$(target).is('.button-collapse') && !$(target).parents().is('.button-collapse')) {
-      $('#slide-out').removeClass('visible-on-mobile');
-    }
-  });
-
-  $('#npm-modules-status')
-    .text('NPM modules were successfuly loaded from from ./node_modules')
-    .closest('.card')
-    .removeClass('red')
-    .addClass('green');
-
-  var html = require('../partial.html');
-
-  $('#raw-loader-status')
-    .html(html)
-    .closest('.card')
-    .removeClass('red')
-    .addClass('green');
+  // var movementStrength = 5;
+  // var height = movementStrength / $(window).height();
+  // var width = movementStrength / $(window).width();
+  // $('.hero').mousemove(function(e){
+  //         var pageX = e.pageX - ($(window).width() / 2);
+  //         var pageY = e.pageY - ($(window).height() / 2);
+  //         var newValueX = width * pageX * -1 - 25;
+  //         var newValueY = height * pageY * -1 - 50;
+  //         $('#hero-feature-image').css({'bottom': String(newValueY) + 'px', 'left': String(newValueX) + 'px'});
+  // });
 
 });

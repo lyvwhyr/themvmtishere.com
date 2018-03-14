@@ -1,24 +1,50 @@
 @import './hero.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import '~/normalize.css';
 
 * {
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 0;
 }
 
+
 body, html {
+  width: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  display: inline-block;
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  width: 100vw;
+.mvmt-text {
+  color: #000;
+  opacity: 0.08;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 200px;  
+  height: 100vh;
+  width: 150px;
+  line-height: 200px;
+  z-index: 1;
+  font-weight: 900;
+  writing-mode: vertical-rl;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  mix-blend-mode: unset;
+  @media (max-width: 900px) { 
+    font-size: 64px;
+    line-height: 64px;
+    width: 70px;
+    mix-blend-mode: lighten;
+  }
 }
 
-.section-two {
+
+.section {
+  position: relative;
   width: 100%;
   background: #fff;
   min-height: 500px;
@@ -29,60 +55,124 @@ body {
   flex-flow: space-between;
   align-content: space-between;
   flex-wrap: wrap;
-  padding: 0 12px;
-  .blurb {
-    font-size: 28px;
-    margin: 0 40px 0 0 ;
-    font-weight: 700;
+  padding: 100px 12px;
+  overflow: hidden;
+  @media (max-width: 900px) {
+    padding: 42px 8px;
+  }
+}
+
+//////////////////////////////////
+//    SECTION TWO OF HOME PAGE //
+////////////////////////////////
+.section.section-two {
+  .description {
+    flex: 1;
+    height: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: right;
+    padding: 0px 50px 0 0;
+    @media (max-width: 900px) {
+      justify-content: space-evenly;
+      flex: unset;
+      align-items: center;
+      width: 100%;
+      height: 500px;
+      padding: 0;
+    }
+    p {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 32px;
+      font-weight: 500;
+      animation-name: slideInLeft;
+      animation-duration: 1000ms;
+      animation-delay: 500ms;
+      animation-fill-mode: both;
+      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      text-align: center;
+    }
   }
   .card {
+    flex: 1;
     width: 400px;
+    max-width: 500px;
     height: 400px;
-    margin: 100px 0;
     border-radius: 2px;
     overflow: hidden;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    @media (max-width: 900px) {
+      flex: unset;
+      width: 100%;
+      height: 500px;
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
     .footer {
+      bottom: 0;
       width: 100%;
-      height: 90px;
+      min-height: 90px;
+      padding: 37px 45px;
       background-color: #fff;
       position: absolute;
-      bottom: 0;
+      font-size: 18px;
+      line-height: 24px;
     }
   }
 }
 
-.section-three {
-  width: 100vw;
-  height: 700px;
+
+//////////////////////////////////
+//  SECTION THREE OF HOME PAGE //
+////////////////////////////////
+.section.section-three {
   background: #000;
-  display: flex;
-  flex-direction: row;
   img {
-    width: 50%;
+    flex: 1;
+    max-height: 500px;
     object-fit: cover;
+    border: 1px solid #fff;
+    padding: 32px;
+    @media (max-width: 900px) {
+      flex: unset;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
-  .side-bar {
-    width: 50%;
-    height: 100%;
+  .description {
+    flex: 1;
+    min-height: 100%;
+    max-width: 500px;
+    @media (max-width: 900px) {
+      flex: unset;
+      width: 100%;
+      min-height: 250px;
+    }
+    .header {
+      font-size: 32px;
+      font-weight: 900;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+    }
+    .text {
+      font-size: 24px;
+      line-height: 30px;
+      color: #fff; 
+    }
   }
 }
 
-.section-four {
-  width: 100vw;
-  height: 500px;
+.section.section-four {
   background: #000;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  justify-content: center;
-  align-items: center;
   color: #fff;
   img {
     position: absolute;
@@ -90,10 +180,9 @@ body {
     opacity: 0.8;
     width: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: -1;
   }
 }
-
 
 @keyframes slideInLeft {
   from {
@@ -107,5 +196,3 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
-
-

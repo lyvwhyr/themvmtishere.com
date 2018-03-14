@@ -20,12 +20,12 @@ npm manifest:
     "description": "A Webpack boilerplate with ES6 and SCSS for simple web projects",
     "main": "server.js",
     "scripts": {
-      "start": "parallelshell yarn run dev:server yarn run dev",
-      "dev:server": "webpack-dev-server",
-      "dev": "node server.js",
+      "start": "parallelshell -v \"yarn run dev:server\" \"yarn run dev\"",
+      "dev:server": "webpack-dev-server ./",
+      "dev": "node ./server.js",
       "deploy": "NODE_ENV=production node server.js",
       "build:clear": "rimraf dist",
-      "build": "npm run build:clear && NODE_ENV=production webpack"
+      "build": "yarn run build:clear && NODE_ENV=production webpack"
     },
     "author": "Brandon Moody",
     "license": "MIT",
@@ -3913,8 +3913,8 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c parallelshell yarn run dev:server yarn run dev
-  Directory: /home/feral/workspace/mvmt
+  Arguments: -c parallelshell -v "yarn run dev:server" "yarn run dev"
+  Directory: /home/feral/workspace/themvmtishere.com
   Output:
   
       at ProcessTermError.MessageError (/usr/share/yarn/lib/cli.js:186:110)
