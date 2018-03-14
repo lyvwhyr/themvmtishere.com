@@ -5,7 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = function() {
 
@@ -110,11 +110,12 @@ module.exports = function() {
           comments: false
         }
       }),
-      new HTMLWebpackPlugin({
-        filename : 'index.html',
-        template : path.resolve(__dirname, 'app') + '/index.html',
-        inject   : 'body'
-      })
+      new CopyWebpackPlugin([
+        {
+          from   : path.resolve(__dirname, 'app'),
+          ignore : ['*.js', '*.scss', '*.ts', '*.css']
+        },
+      ])
     );
 
   }
