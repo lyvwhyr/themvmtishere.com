@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function() {
 
@@ -108,6 +109,11 @@ module.exports = function() {
         output: {
           comments: false
         }
+      }),
+      new HTMLWebpackPlugin({
+        filename : 'index.html',
+        template : path.resolve(__dirname, 'app') + '/index.html',
+        inject   : 'body'
       })
     );
 
