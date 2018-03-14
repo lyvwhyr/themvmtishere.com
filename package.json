@@ -1,26 +1,19 @@
 {
-  "name": "webpack-starter",
+  "name": "corsa-starter-web",
   "version": "1.0.0",
   "description": "A Webpack boilerplate with ES6 and SCSS for simple web projects",
   "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MtDalPizzol/webpack-starter.git"
-  },
   "scripts": {
-    "start": "parallelshell 'npm run dev:server' 'npm run dev'",
+    "start": "parallelshell 'yarn run dev:server' 'yarn run dev'",
     "dev:server": "webpack-dev-server",
     "dev": "node server.js",
     "deploy": "NODE_ENV=production node server.js",
     "build:clear": "rimraf dist",
     "build": "npm run build:clear && NODE_ENV=production webpack"
   },
-  "author": "Matheus Dal'Pizzol",
+  "author": "Brandon Moody",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MtDalPizzol/webpack-starter/issues"
-  },
-  "homepage": "https://github.com/MtDalPizzol/webpack-starter",
+  "homepage": "https://corsa.consulting",
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",

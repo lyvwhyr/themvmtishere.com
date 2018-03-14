@@ -1,3 +1,111 @@
-@import '~mdi/css/materialdesignicons.css';
-@import '~materialize-css/bin/materialize.css';
-@import './layout'
+@import './hero.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+* {
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100vw;
+}
+
+.section-two {
+  width: 100%;
+  background: #fff;
+  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-flow: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 12px;
+  .blurb {
+    font-size: 28px;
+    margin: 0 40px 0 0 ;
+    font-weight: 700;
+  }
+  .card {
+    width: 400px;
+    height: 400px;
+    margin: 100px 0;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .footer {
+      width: 100%;
+      height: 90px;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.section-three {
+  width: 100vw;
+  height: 700px;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 50%;
+    object-fit: cover;
+  }
+  .side-bar {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.section-four {
+  width: 100vw;
+  height: 500px;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  img {
+    position: absolute;
+    height: 100%;
+    opacity: 0.8;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0.0;
+    transform: translate3d(10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    opacity: 1.0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+

@@ -12,7 +12,7 @@ var app = express();
 app.use('/dist', express.static('dist'));
 app.use('/public/img', express.static('app/img'));
 
-// Setupe views format to .html
+// Setup views format to .html
 app.set('view engine', 'html');
 
 // Setup EJS as the engine for rendering .html
